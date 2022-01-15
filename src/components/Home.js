@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import Menu from "./Menu";
 
 const Home = () => {
     const [books, setBooks] = useState([]);
@@ -7,6 +9,7 @@ const Home = () => {
         const getBooks = async () => {
             const booksFromServer = await fetchBooks();
             setBooks(booksFromServer);
+            console.log(booksFromServer);
         }
         getBooks();
     }, [])
@@ -20,8 +23,27 @@ const Home = () => {
 
     return (
         <div>
+            <Container>
+                <Row>
+                    {books.map(book => (
+                        <Col key={book.id} >
+                            <Card>
+                                <Card.Img variant='top' src={`https://covers.openlibrary.org/b/isbn/9780316007436-L.jpg`} height={350}></Card.Img>
+                                <Card.Body>
+                                    <Card.Title>{book.title}</Card.Title>
+                                    <Card.Text>{book.description}</Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                    By {book.author}
+                                </Card.Footer>
+                            </Card>
+                        </Col>
+                    ))}
 
-        </div>
+                </Row>
+            </Container>
+
+        </div >
     );
 }
 
