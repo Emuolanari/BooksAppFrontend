@@ -5,7 +5,7 @@ import Menu from "./Menu";
 const Home = () => {
     const [books, setBooks] = useState([]);
 
-
+    //remember to use default book covers
     useEffect(() => {
         const getBooks = async () => {
             const booksFromServer = await fetchBooks();
@@ -25,7 +25,7 @@ const Home = () => {
     return (
         <div>
             <Container>
-                <Row>
+                <Row pb={2}>
                     {books.map(book => (
                         <Col key={book.id} xs={6} sm={4} md={3}>
                             <Card>
@@ -34,7 +34,7 @@ const Home = () => {
                                     <Card.Title>{book.title}</Card.Title>
                                     <Card.Text>{book.description}</Card.Text>
                                 </Card.Body>
-                                <Card.Footer mb={2}>
+                                <Card.Footer>
                                     By {book.author}
                                 </Card.Footer>
                             </Card>
