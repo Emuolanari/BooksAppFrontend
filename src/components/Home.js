@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-import Menu from "./Menu";
+import defaultCover from './images/defaultCover.jpeg';
 
 const Home = () => {
     const [books, setBooks] = useState([]);
@@ -10,7 +10,6 @@ const Home = () => {
         const getBooks = async () => {
             const booksFromServer = await fetchBooks();
             setBooks(booksFromServer);
-            console.log(booksFromServer);
         }
         getBooks();
     }, [])
@@ -27,9 +26,13 @@ const Home = () => {
             <Container>
                 <Row pb={2}>
                     {books.map(book => (
-                        <Col key={book.id} xs={6} sm={4} md={3}>
+                        <Col key={book.id} className="mb-4" xs={6} sm={4} md={3}>
                             <Card>
-                                <Card.Img variant='top' src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} height={350} ></Card.Img>
+                                <Card.Img variant='top'
+                                    src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg` ?
+                                        `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg` :
+                                        { defaultCover }}
+                                    height={250} ></Card.Img>
                                 <Card.Body>
                                     <Card.Title>{book.title}</Card.Title>
                                     <Card.Text>{book.description}</Card.Text>
