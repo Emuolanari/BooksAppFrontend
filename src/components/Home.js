@@ -5,6 +5,7 @@ import Menu from "./Menu";
 const Home = () => {
     const [books, setBooks] = useState([]);
 
+
     useEffect(() => {
         const getBooks = async () => {
             const booksFromServer = await fetchBooks();
@@ -26,14 +27,14 @@ const Home = () => {
             <Container>
                 <Row>
                     {books.map(book => (
-                        <Col key={book.id} >
+                        <Col key={book.id} xs={6} sm={4} md={3}>
                             <Card>
-                                <Card.Img variant='top' src={`https://covers.openlibrary.org/b/isbn/9780316007436-L.jpg`} height={350}></Card.Img>
+                                <Card.Img variant='top' src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} height={350} ></Card.Img>
                                 <Card.Body>
                                     <Card.Title>{book.title}</Card.Title>
                                     <Card.Text>{book.description}</Card.Text>
                                 </Card.Body>
-                                <Card.Footer>
+                                <Card.Footer mb={2}>
                                     By {book.author}
                                 </Card.Footer>
                             </Card>
