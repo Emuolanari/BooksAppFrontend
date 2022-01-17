@@ -1,15 +1,16 @@
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">BooksApp</Navbar.Brand>
+                <Navbar.Brand as={NavLink} to='/'>BooksApp</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">About</Nav.Link>
+                        <Nav.Link as={NavLink} to='/'>Home</Nav.Link>
+                        <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -17,7 +18,7 @@ const Menu = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#link">Sign Up</Nav.Link>
+                        <Nav.Link as={NavLink} to='/register'>Sign Up</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

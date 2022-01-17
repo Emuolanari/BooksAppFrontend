@@ -1,8 +1,7 @@
-import { Container } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='footer bg-primary'>
+        <div className='sticky-footer bg-primary'>
             <div className="container">
                 <div className="row">
                     <div className="col">

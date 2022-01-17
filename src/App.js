@@ -1,15 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
-import Menu from './components/Menu';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './components/Register';
+import About from './components/About';
 
 function App() {
   return (
     <div>
-      <Menu />
-      <Home />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </Router>
     </div >
   );
 }

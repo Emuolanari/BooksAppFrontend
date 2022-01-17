@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import defaultCover from './images/defaultCover.jpeg';
+import Menu from "./Menu";
+import Footer from './Footer'
 
 const Home = () => {
     const [books, setBooks] = useState([]);
@@ -23,6 +25,7 @@ const Home = () => {
 
     return (
         <div>
+            <Menu />
             <Container>
                 <Row pb={2}>
                     {books.map(book => (
@@ -46,6 +49,7 @@ const Home = () => {
 
                 </Row>
             </Container>
+            <Footer />
 
         </div >
     );
