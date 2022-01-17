@@ -7,7 +7,7 @@ const Footer = () => {
                     <div className="col">
                         <div className="container">
                             <div className="row text-white">
-                                Phone: +44565........
+                                Phone: +447XXXXXXXXX
                             </div>
                         </div>
                         <div className="container">

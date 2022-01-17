@@ -14,17 +14,17 @@ const Register = () => {
             <Container>
                 <Form>
                     <Form.Group controlId="firstName">
-                        <Form.Label>First Name</Form.Label>
+                        <Form.Label>Firstname</Form.Label>
                         <Form.Control type="text" onChange={(e) => { setFirstName(e.target.value) }} placeholder="Enter your firstname"></Form.Control>
                     </Form.Group>
 
                     <Form.Group controlId="lastName">
-                        <Form.Label>Last Name</Form.Label>
+                        <Form.Label>Lastname</Form.Label>
                         <Form.Control type="text" onChange={(e) => { setSurname(e.target.value) }} placeholder="Enter your surname"></Form.Control>
                     </Form.Group>
 
                     <Form.Group controlId="userName">
-                        <Form.Label>Last Name</Form.Label>
+                        <Form.Label>Username</Form.Label>
                         <Form.Control type="text" onChange={(e) => { setUserName(e.target.value) }} placeholder="Enter a username"></Form.Control>
                     </Form.Group>
 
